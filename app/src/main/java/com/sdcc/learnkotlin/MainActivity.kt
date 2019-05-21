@@ -5,8 +5,11 @@ import android.os.Bundle
 import android.support.v7.widget.LinearLayoutManager
 import android.support.v7.widget.RecyclerView
 import android.widget.Toast
+import com.sdcc.learnkotlin.adapter.ForecastListAdapter
 
 class MainActivity : AppCompatActivity() {
+
+    private val items = listOf<String>("Apple","Google", "Nokia", "Cannon")
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -20,6 +23,7 @@ class MainActivity : AppCompatActivity() {
 
         forecastList.layoutManager = LinearLayoutManager(this)
 
+        forecastList.adapter = ForecastListAdapter(items)
 
     }
 
